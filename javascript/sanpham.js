@@ -78,9 +78,6 @@ for(let i = 0; i < boxValue.length; i++){
 amountCart.innerText = amount;
 
 }
-function login(){
-  alert('Coming soon ....');
-}
 function readmore(){
   let readmoreBtn = document.getElementById('readmore-btn')
   descripText = '';
@@ -136,3 +133,25 @@ function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
 ///////////////////////////////////////////////
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+let randomContainer = document.getElementById('random-container');
+
+let display = '';
+let copyList = listBooksLocal.slice();
+let randomList = [];
+let index = 0;
+for(let h = 0; h < 4; h++){
+  index = getRandomInt(copyList.length);
+  randomList.push(copyList[index]);
+  copyList.splice(index, 1);
+}
+    for (let i = 0; i < randomList.length; i++) {
+        display += `<a href = "./sanpham.html" class="item" onclick="myFunction(this)" title="${randomList[i].name}"><div>`;
+        display += `<img src="${randomList[i].srcImg}"><br>`;
+
+        display += `<span class="name">${randomList[i].name}</span><br><span class="price">${numberWithCommas(randomList[i].price)} đ</span> `;
+        display += '</div></a>';
+    }
+    randomContainer.innerHTML = display;

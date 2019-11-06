@@ -59,7 +59,40 @@ header {
     width: 20%;
     margin: auto;
 }
-
+#random-container{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+/*  */
+#random-container img{
+    height: 200px;
+}
+.item{
+    width: 95%;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.226);
+    transition: 1s;
+    text-decoration: none;
+    margin: 10px;
+}
+.item:hover{
+    transform: scale(1.07);
+    border: 1px solid #1f601f;
+    text-decoration: none;
+}
+/*Phần sản phẩm item  */
+.name{
+    display: inline-block;
+    height: 50px;
+}
+.price{
+    display: inline-block;
+    height: 30px;
+}
+.item img{
+    width: auto;
+    height: 250px;
+}
 /* Search-form */
 form.example input[type=text] {
     padding: 10px;
