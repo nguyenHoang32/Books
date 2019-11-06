@@ -16,7 +16,8 @@ amountCart.innerText = amount;
 let listItem = document.getElementById('list-item');
 if (localStorage.getItem('boxName') == '[]') {
     
-    display = 'Giỏ hàng không có sản phẩm';
+    display = '<p class="no-books">Không có sản phẩm nào trong giỏ hàng của bạn<br><a href="./index.html"><button class="continue-buy">Tiếp tục mua sắm<button></a></p>';
+    
     document.getElementById('div-buy').style.display = 'none';
 }
 else {

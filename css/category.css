@@ -26,7 +26,7 @@ header {
 }
 
 #content {
-    width: 80%;
+    width: 95%;
     margin: auto;
 }
 
@@ -34,10 +34,6 @@ header {
     background-color: rgb(216, 208, 208);
     width: 95%;
     margin: auto;
-}
-#logo {
-    width: 70%;
-    height: auto;
 }
 
 #logo,

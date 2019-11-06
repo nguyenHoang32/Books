@@ -35,10 +35,7 @@ header {
     width: 95%;
     margin: auto;
 }
-#logo {
-    width: 70%;
-    height: auto;
-}
+
 
 #logo,
 #div-search-form,
@@ -162,4 +159,19 @@ form.example::after {
 }
 .delete:hover{
     color: red;
+}
+.no-books{
+    text-align: center;
+    display: inline-block;
+    width: 500px;
+    margin-left: 60%;
+}
+.continue-buy{
+    padding: 10px;
+    font-weight: bold;
+    background-color: #fdd835;
+    border-radius: 15px;
+}
+.continue-buy:hover{
+    background-color: #fdce03;
 }
