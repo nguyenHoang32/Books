@@ -94,6 +94,7 @@ function deleted(button) {
                     <button class="delete" onclick="deleted(this)">Xóa</button>
                     </div>`;
             total += boxValue[i].price * Number(boxValue[i].quality);
+            listItem.innerHTML = display;
         }
     }
 
