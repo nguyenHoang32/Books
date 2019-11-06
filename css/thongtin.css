@@ -1,0 +1,175 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Hind', sans-serif;
+}
+body{
+  font-size: 20px;
+  background-color: #f0f0f0;
+}
+#logo{
+  
+  height: auto;
+}
+#container{
+    display: flex;
+    width: 90%;
+    margin: auto;
+}
+form{
+    background-color: white;
+    border: 1px solid gray;
+}
+#confirm-form{
+  border: none;
+}
+label{
+    display: inline-block !important;
+    margin: 10px;
+    width: 90%;
+}
+input{
+  margin-right: 0px;
+}
+
+.title{
+    display: inline-block;
+    width: 43%;
+    font-weight: bold;
+}
+input,select{
+    height: 27px; 
+    width: 50%;
+    
+}
+
+#name-error,#number-error,#address-error,#select-error{
+    color: red;
+}
+#confirm-form{
+    margin-left: 200px;
+    
+}
+table{
+  text-align: center;
+}
+table, th, td {
+  border: 1px solid black;
+}
+legend{
+    color: white;
+    font-size: 30px;
+    background-color: #007ff0;
+    text-align: center;
+}
+#myBtn{
+    font-size: 35px;
+    margin-left: 35%;
+    margin-top: 20px;
+    background-color: rgb(241, 31, 31);
+    color: white;
+    padding: 10px;
+    width: 30%;
+    border-radius: 8%;
+    font-weight: 400;
+}
+#myBtn:hover{
+  opacity: 0.8;
+  cursor: pointer;
+}
+/* -------------------------------- */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s
+  }
+  
+  /* Add Animation */
+  @-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+  }
+  
+  @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+  }
+  
+  /* The Close Button */
+  .close {
+    color: black;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .modal-header {
+    padding: 2px 16px;
+  }
+   
+  /* Modal Content */
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s
+  }
+  
+  /* Add Animation */
+  @keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+  }
+#div-shop-cart{
+  margin-top: 60px;
+  margin-right: 60px;
+
+}
+#btn-cart {
+  width: 110%;
+  height: 100px;
+  font-size: 25px;
+  margin: 0px;
+  background-color: rgb(0, 127, 240);
+  color: white;
+  border: 1px solid white;
+  border-radius: 20%;
+  border: 1px solid grey;
+}
+#btn-cart:hover{
+  cursor: pointer;
+  opacity: 0.8;
+}
