@@ -75,7 +75,8 @@ function deleted(button) {
     display = '';
     total = 0;
     if (boxValue.length == 0) {
-        display = 'Giỏ hàng không có sản phẩm';
+        display = '<p class="no-books">Không có sản phẩm nào trong giỏ hàng của bạn<br><a href="./index.html"><button class="continue-buy">Tiếp tục mua sắm<button></a></p>';
+        document.getElementById('div-buy').style.display = 'none';
     }
     else {
         for (let i = 0; i < boxValue.length; i++) {
@@ -98,12 +99,6 @@ function deleted(button) {
 
     totalMoney.innerHTML = numberWithCommas(total) + ' đ';
     listItem.innerHTML = display;
-    if (localStorage.getItem('boxName') == '[]') {
-    
-        display = 'Giỏ hàng không có sản phẩm';
-        document.getElementById('div-buy').style.display = 'none';
-    }
-    amount = 0;
 for(let i = 0; i < boxValue.length; i++){
     amount += boxValue[i].quality;
 }
