@@ -21,6 +21,9 @@ document.getElementById('infor-kichthuoc').innerText = result.kickThuoc;
 // Thêm amount vào giỏ hàng
 let amountCart = document.getElementById('amount-cart');
 let boxValue = JSON.parse(localStorage.getItem('boxName'));
+if(boxValue == null){
+  boxValue = [];
+}
 let amount = 0;
 for(let i = 0; i < boxValue.length; i++){
     amount += boxValue[i].quality;

@@ -65,6 +65,9 @@ let contentText = '';
 let totalMoney = 0;
 let totalQuality = 0;
 let boxValue = JSON.parse(localStorage.getItem('boxName'));
+if(boxValue == null){
+    boxValue = [];
+}
 for(let i = 0; i < boxValue.length; i++){
     contentText += `<tr><td>${boxValue[i].name}</td>`;
     contentText += `<td>${boxValue[i].quality}</td>`;

@@ -14,7 +14,7 @@ for(let i = 0; i < subCategoryList.length; i++){
     display+= `<span class="name">${subCategoryList[i].name}</span><br><p class="price">${numberWithCommas(subCategoryList[i].price)} đ</p>`;
     display+= '</div></a>';
 }
-
+console.log(subCategoryList);
 container.innerHTML = display;
 function filter(){
     display = '';
@@ -89,6 +89,9 @@ function numberWithCommas(x) {
 // Thêm amount vào giỏ hàng
 let amountCart = document.getElementById('amount-cart');
 let boxValue = JSON.parse(localStorage.getItem('boxName'));
+if(boxValue == null){
+    boxValue = [];
+}
 let amount = 0;
 for(let i = 0; i < boxValue.length; i++){
     amount += boxValue[i].quality;

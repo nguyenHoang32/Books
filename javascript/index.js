@@ -1,3 +1,4 @@
+
 localStorage.setItem('listBooksLocal', JSON.stringify(list));
 let containerSach = document.getElementsByClassName('container-sach');
 let containerKyNang = document.getElementById('container-kynang');
@@ -6,6 +7,9 @@ let containerKinhTe = document.getElementById('container-kinhte');
 // Thêm amount vào giỏ hàng
 let amountCart = document.getElementById('amount-cart');
 let boxValue = JSON.parse(localStorage.getItem('boxName'));
+if(boxValue == null){
+    boxValue = [];
+}
 let amount = 0;
 for(let i = 0; i < boxValue.length; i++){
     amount += boxValue[i].quality;

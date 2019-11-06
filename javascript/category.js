@@ -93,6 +93,9 @@ function numberWithCommas(x) {
 let amountCart = document.getElementById('amount-cart');
 let boxValue = JSON.parse(localStorage.getItem('boxName'));
 let amount = 0;
+if(boxValue == null){
+    boxValue = [];
+}
 for(let i = 0; i < boxValue.length; i++){
     amount += boxValue[i].quality;
 }
