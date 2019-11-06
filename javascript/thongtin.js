@@ -74,7 +74,7 @@ for(let i = 0; i < boxValue.length; i++){
     totalQuality += Number(boxValue[i].quality);
 }
 
-tfoot[0].innerHTML = `<tr><td>Tổng: </td><td>${totalQuality}</td><td>${numberWithCommas(totalMoney)} đ</td></tr>`;
+tfoot[0].innerHTML = `<tr><td>Tổng: </td><td>${totalQuality}</td><td style="color:red;">${numberWithCommas(totalMoney)} đ</td></tr>`;
 content.innerHTML = contentText;
 let isDisplay = false;
 function confirm(isDisplay){

@@ -13,7 +13,7 @@ body{
 }
 #container{
     display: flex;
-    width: 90%;
+    width: 95%;
     margin: auto;
 }
 form{
@@ -21,7 +21,9 @@ form{
     border: 1px solid gray;
 }
 #confirm-form{
+  margin-right: 5%;
   border: none;
+  width: 100%;
 }
 label{
     display: inline-block !important;
@@ -154,9 +156,8 @@ legend{
     to {top: 0; opacity: 1}
   }
 #div-shop-cart{
-  margin-top: 60px;
+  margin-top: 6.5%;
   margin-right: 60px;
-
 }
 #btn-cart {
   width: 110%;
