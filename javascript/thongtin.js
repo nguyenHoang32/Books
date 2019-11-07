@@ -83,9 +83,11 @@ let isDisplay = false;
 function confirm(isDisplay){
     if(isAddressError && isNameError && isSelectError && isNumberError && name.value != '' && number.value != '' && address.value && select.selectedIndex != 0 ){
         isDisplay = true;
-        setTimeout(function(){
-            window.location = "./index.html";
-        },5000);
+        
+        
+        // setTimeout(function(){
+        //     window.location = "./index.html";
+        // },5000);
     }
     validate1();
     validate2();
@@ -95,33 +97,29 @@ function confirm(isDisplay){
     return isDisplay;
     
 }
-// //////////////////////////////////////
-var modal = document.getElementById("myModal");
-
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
+let number1 = 10;
+function demNguoc(){
+    
+    number1=number1 - 1;
+    if(number1 != 0){
+        document.getElementById('main-body').innerHTML = `<div style="text-align: center;"><h2>ĐƠN HÀNG CỦA BẠN ĐÃ ĐƯỢC TIẾP NHẬN</h2><p style="color:#e25203;font-size: 35px;">Cảm ơn bạn đã mua hàng</p style="font-size:30px">Tự động quay lại trang chủ trong <span style="color:red">${number1} s</span></div>`;
+        setTimeout(demNguoc,1000);
+    }else{
+        window.location = './index.html';
+    }
+    
+}
 function abcd() {
     if(confirm(isDisplay)){
-        modal.style.display = "block";
+        // modal.style.display = "block";
+        let newBox = [];
+        localStorage.setItem('boxName', JSON.stringify(newBox));
+        demNguoc();
     }
 }
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
+
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }

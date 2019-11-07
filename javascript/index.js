@@ -47,6 +47,7 @@ let input = document.getElementById('input');
 function searchBook() {
     let value = input.value;
     localStorage.setItem('searchName', value);
+    
     window.open('./timkiem.html');
 }
 function goToSubCategory(a) {

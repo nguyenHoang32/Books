@@ -5,20 +5,25 @@ let total = 0;
 let totalMoney = document.getElementById('total-money');
 // Thêm amount vào giỏ hàng
 let amountCart = document.getElementById('amount-cart');
-
+let listItem = document.getElementById('list-item');
 let amount = 0;
-for(let i = 0; i < boxValue.length; i++){
+if (boxValue === null) {
+    boxValue = [];
+}
+
+for (let i = 0; i < boxValue.length; i++) {
     amount += Number(boxValue[i].quality);
 }
 amountCart.innerText = amount;
+
 // 
 
-let listItem = document.getElementById('list-item');
-if (localStorage.getItem('boxName') == '[]') {
+if (boxValue.length == 0) {
     
     display = '<p class="no-books">Không có sản phẩm nào trong giỏ hàng của bạn<br><a href="./index.html"><button class="continue-buy">Tiếp tục mua sắm<button></a></p>';
-    
+
     document.getElementById('div-buy').style.display = 'none';
+
 }
 else {
     for (let i = 0; i < boxValue.length; i++) {
@@ -36,8 +41,10 @@ else {
                     <button class="delete" onclick="deleted(this)">Xóa</button>
                     </div>`;
         total += boxValue[i].price * Number(boxValue[i].quality);
+
     }
 }
+
 
 listItem.innerHTML = display;
 totalMoney.innerText = numberWithCommas(total) + ' đ';
@@ -47,7 +54,7 @@ function changed(input) {
         input.value = 1;
     }
     total = 0;
-    
+
     let name = input.parentNode.parentNode.getElementsByClassName('name')[0].innerText;
     for (let i = 0; i < boxValue.length; i++) {
         if (boxValue[i].name == name) {
@@ -59,10 +66,10 @@ function changed(input) {
     totalMoney.innerHTML = numberWithCommas(total) + ' đ';
     boxValue = JSON.parse(localStorage.getItem('boxName'));
     amount = 0;
-    for(let i = 0; i < boxValue.length; i++){
-    amount += Number(boxValue[i].quality);
-}
-amountCart.innerText = amount;
+    for (let i = 0; i < boxValue.length; i++) {
+        amount += Number(boxValue[i].quality);
+    }
+    amountCart.innerText = amount;
 }
 
 function deleted(button) {
@@ -100,10 +107,10 @@ function deleted(button) {
 
     totalMoney.innerHTML = numberWithCommas(total) + ' đ';
     listItem.innerHTML = display;
-for(let i = 0; i < boxValue.length; i++){
-    amount += boxValue[i].quality;
-}
-amountCart.innerText = amount;
+    for (let i = 0; i < boxValue.length; i++) {
+        amount += boxValue[i].quality;
+    }
+    amountCart.innerText = amount;
 }
 function myFunction(a) {
     let itemValue = a.innerHTML;
