@@ -172,6 +172,7 @@ form.example::after {
 }
 /*Phần sản phẩm item  */
 .name{
+    
     display: inline-block;
     height: 50px;
 }

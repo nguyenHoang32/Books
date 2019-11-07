@@ -6,6 +6,8 @@ let result = listBooksLocal.filter(function(item){
 result = result[0];
 let name = document.getElementById('name');
 let price = document.getElementById('price');
+let priceSale = document.getElementById('price-sale');
+let sale = document.getElementById('sale');
 let author = document.getElementById('author');
 name.innerText = `${result.name}`;
 price.innerText = `${numberWithCommas(result.price)} đ`;
@@ -50,6 +52,8 @@ inforText+=`Tác giả : ${result.author}`;
 
 img.src = result.srcImg;
 img.title = result.name;
+priceSale.innerHTML = numberWithCommas(result.price - (result.price * result.isSale)/100) +' đ';
+sale.innerHTML = `<span style="color:red">${result.isSale} %</span> (${numberWithCommas((result.price * result.isSale)/100)} đ)`;
 let dataString = localStorage.getItem('boxName');
 let box; 
 if(dataString){

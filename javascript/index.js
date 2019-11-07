@@ -27,8 +27,8 @@ function show(theloai) {
     for (let i = 0; i < 8; i++) {
         display += `<a href = "./sanpham.html" class="item" onclick="myFunction(this)" title="${newList[i].name}"><div>`;
         display += `<img src="${newList[i].srcImg}"><br>`;
-
-        display += `<span class="name">${newList[i].name}</span><br><span class="price">${numberWithCommas(newList[i].price)} đ</span> `;
+        let priceSale = newList[i].price - (newList[i].price * newList[i].isSale)/100;
+        display += `<span class="name" style="color:black;">${newList[i].name}</span><br><span class="price" style="color:black;font-weight:bold">${numberWithCommas(priceSale)} đ</span><span style="margin-left:3%;color:grey;">-${newList[i].isSale}%</span><p style="color:grey"><strike>${numberWithCommas(newList[i].price)} đ</strike></p> `;
         display += '</div></a>';
 
     }

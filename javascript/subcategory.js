@@ -11,10 +11,11 @@ let subCategoryList = listBooksLocal.filter(function(book){
 for(let i = 0; i < subCategoryList.length; i++){
     display+= `<a href = "./sanpham.html" class="item" onclick="myFunction(this)" title="${subCategoryList[i].name}"><div>`;
     display+= `<img src='${subCategoryList[i].srcImg}'><br>`;
-    display+= `<span class="name">${subCategoryList[i].name}</span><br><p class="price">${numberWithCommas(subCategoryList[i].price)} đ</p>`;
+    let priceSale = subCategoryList[i].price - (subCategoryList[i].price * subCategoryList[i].isSale)/100;
+    display+= `<span class="name" style="color:black">${subCategoryList[i].name}</span><br><p class="price" style="color:black;font-weight:bold">${numberWithCommas(priceSale)} đ</p><span style="margin-left:3%;color:grey;">-${subCategoryList[i].isSale}%</span><p style="color:grey"><strike>${numberWithCommas(subCategoryList[i].price)} đ</strike></p>`;
     display+= '</div></a>';
 }
-console.log(subCategoryList);
+
 container.innerHTML = display;
 function filter(){
     display = '';
@@ -56,7 +57,8 @@ function filter(){
     for(let i = 0; i < newList.length; i++){
         display+= `<a href = "./sanpham.html" class="item" title="${newList[i].name}"><div>`;
         display+= `<img src='${newList[i].srcImg}'><br>`;
-        display+= `<span class="name">${newList[i].name}</span><br><span class="price">${numberWithCommas(newList[i].price)} đ</span>`;
+        let priceSale = newList[i].price - (newList[i].price * newList[i].isSale)/100;
+        display+= `<span class="name" style="color:black">${newList[i].name}</span><br><p class="price" style="color:black;font-weight:bold">${numberWithCommas(priceSale)} đ</p><span style="margin-left:3%;color:grey;">-${newList[i].isSale}%</span><p style="color:grey"><strike>${numberWithCommas(subCategoryList[i].price)} đ</strike></p>`;
         display+= '</div></a>';
     }
     container.innerHTML = display;

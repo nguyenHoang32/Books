@@ -12,7 +12,8 @@ searchList = searchList.filter(function(element){
 for(let i = 0; i < searchList.length; i++){
     display+= `<a href = "./sanpham.html" class="item" onclick="myFunction(this)"><div>`;
     display+= `<img src='${searchList[i].srcImg}'><br>`;
-    display+= `<span class="name">${searchList[i].name}</span><br><p class="price">${numberWithCommas(searchList[i].price)} đ</p>`;
+    let priceSale = searchList[i].price - (searchList[i].price * searchList[i].isSale)/100;
+    display+= `<span class="name" style="color:black">${searchList[i].name}</span><br><p class="price" style="color:black;font-weight:bold">${numberWithCommas(priceSale)} đ</p><span style="margin-left:3%;color:grey;">-${searchList[i].isSale}%</span><p style="color:grey"><strike>${numberWithCommas(searchList[i].price)} đ</strike></p>`;
     display+= '</div></a>';
 }
 
@@ -57,7 +58,8 @@ function filter(){
     for(let i = 0; i < newList.length; i++){
         display+= `<a href = "./sanpham.html" class="item"><div>`;
         display+= `<img src='${newList[i].srcImg}'><br>`;
-        display+= `<span class="name">${newList[i].name}</span><br><p class="price">${numberWithCommas(newList[i].price)} đ</p>`;
+        let priceSale = newList[i].price - (newList[i].price * newList[i].isSale)/100;
+        display+= `<span class="name" style="color:black">${newList[i].name}</span><br><p class="price" style="color:black;font-weight:bold">${numberWithCommas(priceSale)} đ</p><span style="margin-left:3%;color:grey;">-${newList[i].isSale}%</span><p style="color:grey"><strike>${numberWithCommas(newList[i].price)} đ</strike></p>`;
         display+= '</div></a>';
     }
     container.innerHTML = display;

@@ -71,9 +71,10 @@ if(boxValue == null){
 for(let i = 0; i < boxValue.length; i++){
     contentText += `<tr><td>${boxValue[i].name}</td>`;
     contentText += `<td>${boxValue[i].quality}</td>`;
-    let a = boxValue[i].quality * boxValue[i].price;
+    let salePrice = boxValue[i].price - (boxValue[i].price * boxValue[i].isSale)/100;
+    let a = boxValue[i].quality * salePrice;
     contentText += `<td>${numberWithCommas(a)}đ</td><tr>`;
-    totalMoney += boxValue[i].quality * boxValue[i].price;
+    totalMoney += a;
     totalQuality += Number(boxValue[i].quality);
 }
 

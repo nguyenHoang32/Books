@@ -34,13 +34,14 @@ else {
                         <br>
                         <span>Tác giả:<a href="" style="text-decoration: none;">${boxValue[i].author}</a></span>
                         </div>`;
-        display += `<div><span>${numberWithCommas(boxValue[i].price)}đ</span></div>`;
+        let salePrice = boxValue[i].price - (boxValue[i].price * boxValue[i].isSale)/100;
+        display += `<div><span>${numberWithCommas(salePrice)}đ</span></div>`;
         display += `<div style="width: 20%">
                         <input onchange = "changed(this)" min = 1 type="number" value="${boxValue[i].quality}" style="width: 30%;margin-left:40%;text-align: center;">
                     </div>
                     <button class="delete" onclick="deleted(this)">Xóa</button>
                     </div>`;
-        total += boxValue[i].price * Number(boxValue[i].quality);
+        total += salePrice * Number(boxValue[i].quality);
 
     }
 }
@@ -60,7 +61,8 @@ function changed(input) {
         if (boxValue[i].name == name) {
             boxValue[i].quality = input.value;
         }
-        total += boxValue[i].price * Number(boxValue[i].quality);
+        let salePrice = boxValue[i].price - (boxValue[i].price * boxValue[i].isSale)/100;
+        total += salePrice * Number(boxValue[i].quality);
     }
     localStorage.setItem('boxName', JSON.stringify(boxValue));
     totalMoney.innerHTML = numberWithCommas(total) + ' đ';
@@ -94,13 +96,14 @@ function deleted(button) {
                         <br>
                         <span>Tác giả:<a href="" style="text-decoration: none;">${boxValue[i].author}</a></span>
                         </div>`;
-            display += `<div><span>${numberWithCommas(boxValue[i].price)}đ</span></div>`;
+            let salePrice = boxValue[i].price - (boxValue[i].price * boxValue[i].isSale)/100;
+            display += `<div><span>${numberWithCommas(salePrice)}đ</span></div>`;
             display += `<div style="width: 20%">
                         <input onchange = "changed(this)" min = 1 type="number" value="${boxValue[i].quality}" style="width: 30%;margin-left:40%;text-align: center;">
                     </div>
                     <button class="delete" onclick="deleted(this)">Xóa</button>
                     </div>`;
-            total += boxValue[i].price * Number(boxValue[i].quality);
+            total += salePrice * Number(boxValue[i].quality);
             listItem.innerHTML = display;
         }
     }
