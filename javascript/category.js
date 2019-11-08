@@ -49,12 +49,13 @@ function filter() {
     }
     if (index == 3) {
         newList = categoryList.sort(function (a, b) {
-            return a.price - b.price;
+            return (a.price - (a.price * a.isSale)) - (b.price - ((b.price * b.isSale)/100));
         });
     }
     if (index == 4) {
         newList = categoryList.sort(function (a, b) {
-            return b.price - a.price;
+            return (b.price - (b.price * b.isSale)) - (a.price - ((a.price * a.isSale)/100));
+            
         });
     }
 

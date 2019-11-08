@@ -44,16 +44,17 @@ function filter(){
                 return 0;
             })
         }
-    if(index == 3){
-        newList = searchList.sort(function(a, b){
-            return a.price - b.price;
-        });
-    }
-    if(index == 4){
-        newList = searchList.sort(function(a, b){
-            return b.price - a.price;
-        });
-    }
+        if (index == 3) {
+            newList = categoryList.sort(function (a, b) {
+                return (a.price - (a.price * a.isSale)) - (b.price - ((b.price * b.isSale)/100));
+            });
+        }
+        if (index == 4) {
+            newList = categoryList.sort(function (a, b) {
+                return (b.price - (b.price * b.isSale)) - (a.price - ((a.price * a.isSale)/100));
+                
+            });
+        }
     
     for(let i = 0; i < newList.length; i++){
         display+= `<a href = "./sanpham.html" class="item"><div>`;
