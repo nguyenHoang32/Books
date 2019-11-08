@@ -81,6 +81,10 @@ function deleted(button) {
     })
     boxValue.splice(index, 1);
     localStorage.setItem('boxName', JSON.stringify(boxValue));
+    boxValue = JSON.parse(localStorage.getItem('boxName'));
+    if (boxValue === null) {
+        boxValue = [];
+    }
     display = '';
     total = 0;
     if (boxValue.length == 0) {
@@ -110,8 +114,14 @@ function deleted(button) {
 
     totalMoney.innerHTML = numberWithCommas(total) + ' đ';
     listItem.innerHTML = display;
-    for (let i = 0; i < boxValue.length; i++) {
-        amount += boxValue[i].quality;
+    amount = 0;
+    if(boxValue.length == 0){
+        amount = 0;
+    }
+    else{
+        for (let i = 0; i < boxValue.length; i++) {
+            amount += Number(boxValue[i].quality);
+        }
     }
     amountCart.innerText = amount;
 }
