@@ -10,15 +10,7 @@ let isNameError = false;
 let isNumberError = false;
 let isAddressError = false;
 let isSelectError = false;
-// Thêm amount vào giỏ hàng
-let amountCart = document.getElementById('amount-cart');
-boxValue = JSON.parse(localStorage.getItem('boxName'));
-let amount = 0;
-for(let i = 0; i < boxValue.length; i++){
-    amount += Number(boxValue[i].quality);
-}
-amountCart.innerText = amount;
-// 
+
 function validate1(){
     let regexName = /^[a-zA-Z\s]{3,}$/;
     if(name.value == ''){
@@ -77,6 +69,14 @@ let boxValue = JSON.parse(localStorage.getItem('boxName'));
 if(boxValue == null){
     boxValue = [];
 }
+// Thêm amount vào giỏ hàng
+let amountCart = document.getElementById('amount-cart');
+let amount = 0;
+for(let i = 0; i < boxValue.length; i++){
+    amount += Number(boxValue[i].quality);
+}
+amountCart.innerText = amount;
+// 
 for(let i = 0; i < boxValue.length; i++){
     contentText += `<tr><td>${boxValue[i].name}</td>`;
     contentText += `<td>${boxValue[i].quality}</td>`;
