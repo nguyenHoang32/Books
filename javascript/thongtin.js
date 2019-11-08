@@ -10,6 +10,15 @@ let isNameError = false;
 let isNumberError = false;
 let isAddressError = false;
 let isSelectError = false;
+// Thêm amount vào giỏ hàng
+let amountCart = document.getElementById('amount-cart');
+boxValue = JSON.parse(localStorage.getItem('boxName'));
+let amount = 0;
+for(let i = 0; i < boxValue.length; i++){
+    amount += Number(boxValue[i].quality);
+}
+amountCart.innerText = amount;
+// 
 function validate1(){
     let regexName = /^[a-zA-Z\s]{3,}$/;
     if(name.value == ''){
@@ -115,6 +124,9 @@ function abcd() {
         // modal.style.display = "block";
         let newBox = [];
         localStorage.setItem('boxName', JSON.stringify(newBox));
+        amount = 0;
+       
+        amountCart.innerText = amount;
         demNguoc();
     }
 }
@@ -124,15 +136,7 @@ function abcd() {
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
-// Thêm amount vào giỏ hàng
-let amountCart = document.getElementById('amount-cart');
-boxValue = JSON.parse(localStorage.getItem('boxName'));
-let amount = 0;
-for(let i = 0; i < boxValue.length; i++){
-    amount += Number(boxValue[i].quality);
-}
-amountCart.innerText = amount;
-// 
+
 function nonAccentVietnamese(str) {
     str = str.toLowerCase();
 //     We can also use this instead of from line 11 to line 17
