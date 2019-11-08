@@ -164,3 +164,7 @@ for(let h = 0; h < 4; h++){
         display += '</div></a>';
     }
     randomContainer.innerHTML = display;
+    function myFunction(a) {
+      let itemValue = a.getElementsByTagName('span')[0].innerHTML;
+      localStorage.setItem('itemName', itemValue);
+  }
