@@ -47,14 +47,14 @@ function filter(){
             })
         }
         if (index == 3) {
-            newList = categoryList.sort(function (a, b) {
+            newList = subCategoryList.sort(function (a, b) {
                 let priceSaleA = a.price - (a.price * a.isSale)/100;
                 let priceSaleB = b.price - (b.price * b.isSale)/100;
                 return priceSaleA - priceSaleB;
             });
         }
         if (index == 4) {
-            newList = categoryList.sort(function (a, b) {
+            newList = subCategoryList.sort(function (a, b) {
                 let priceSaleA = a.price - (a.price * a.isSale)/100;
                 let priceSaleB = b.price - (b.price * b.isSale)/100;
                 return priceSaleB - priceSaleA;
