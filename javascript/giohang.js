@@ -48,7 +48,7 @@ else {
 
 
 listItem.innerHTML = display;
-totalMoney.innerText = numberWithCommas(total) + ' đ';
+totalMoney.innerText = numberWithCommas(total) + 'đ';
 
 function changed(input) {
     if (input.value < 1) {
