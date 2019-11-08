@@ -53,8 +53,9 @@ function searchBook() {
 function goToSubCategory(a) {
     let subcategoryValue = a.innerHTML;
     let categoryBigValue = a.parentNode.parentNode.parentNode.getElementsByTagName('a')[1].innerText;
-    localStorage.setItem('subcategoryName', subcategoryValue);
     localStorage.setItem('categoryBigName',categoryBigValue);
+    localStorage.setItem('subcategoryName', subcategoryValue);
+    
 }
 function goToCategory(a) {  
     let categoryValue = a.innerText;
