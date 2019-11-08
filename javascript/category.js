@@ -105,7 +105,7 @@ if(boxValue == null){
     boxValue = [];
 }
 for(let i = 0; i < boxValue.length; i++){
-    amount += boxValue[i].quality;
+    amount += Number(boxValue[i].quality);
 }
 amountCart.innerText = amount;
 // 
