@@ -168,3 +168,4 @@ for(let h = 0; h < 4; h++){
       let itemValue = a.getElementsByTagName('span')[0].innerHTML;
       localStorage.setItem('itemName', itemValue);
   }
+  console.log('Hello');
