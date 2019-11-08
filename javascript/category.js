@@ -74,6 +74,8 @@ function myFunction(a) {
 }
 function goToSubCategory(a) {
     let subcategoryValue = a.innerHTML;
+    let categoryBigValue = a.parentNode.parentNode.parentNode.getElementsByTagName('a')[1].innerText;
+    localStorage.setItem('categoryBigName',categoryBigValue);
     localStorage.setItem('subcategoryName', subcategoryValue);
 
 }

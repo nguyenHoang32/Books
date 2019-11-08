@@ -11,7 +11,7 @@ let isNumberError = false;
 let isAddressError = false;
 let isSelectError = false;
 function validate1(){
-    let regexName = /[a-zA-Z]{3,}/;
+    let regexName = /^[a-zA-Z\s]{3,}$/;
     if(name.value == ''){
         nameError.innerHTML = '<br>Bạn chưa điền tên';
         
@@ -26,7 +26,7 @@ function validate1(){
    }
 }
 function validate2(){
-    let regexPhone = /0[0-9]{7,11}/;
+    let regexPhone = /^0[0-9]{7,11}$/;
     if(number.value == ''){
         numberError.innerHTML = '<br>Bạn chưa điền số điện thoại';
        }

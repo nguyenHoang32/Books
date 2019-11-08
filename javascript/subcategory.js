@@ -3,6 +3,9 @@ let container = document.getElementById('container');
 let display = '';
 let name = document.getElementsByClassName('name');
 let price = document.getElementsByClassName('price');
+let categoryBigName = document.getElementById('category-big-name');
+let categoryBigValue = localStorage.getItem('categoryBigName');
+categoryBigName.innerText = categoryBigValue;
 let subCategoryValue = localStorage.getItem('subcategoryName');
 let subCategoryList = listBooksLocal.filter(function(book){
     return book.subCategory == subCategoryValue;
@@ -70,6 +73,8 @@ function myFunction(a){
 }
 function goToSubCategory(a){
     let subcategoryValue = a.innerHTML;
+    let categoryBigValue = a.parentNode.parentNode.parentNode.getElementsByTagName('a')[1].innerText;
+    localStorage.setItem('categoryBigName',categoryBigValue);
     localStorage.setItem('subcategoryName', subcategoryValue);
 
 }
@@ -83,7 +88,7 @@ function searchBook(){
     window.open('./timkiem.html');
   }
   let categoryName = document.getElementById('category-name');
-  categoryName.innerHTML = subCategoryValue;
+  categoryName.innerHTML = ' > '+subCategoryValue;
 // -----------------------------------
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
