@@ -128,3 +128,4 @@ for(let i = 0; i < boxValue.length; i++){
 }
 amountCart.innerText = amount;
 // 
+console.log('Hello');

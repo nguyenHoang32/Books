@@ -155,3 +155,4 @@ function nonAccentVietnamese(str) {
     str = str.replace(/\u02C6|\u0306|\u031B/g, ""); // Â, Ê, Ă, Ơ, Ư
     return str;
 }
+console.log('Hello');

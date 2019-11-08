@@ -76,3 +76,4 @@ function readmore3(btn) {
         localStorage.setItem('categoryName','Kinh tế');
         window.location = './category.html';
     }
+console.log('Hello');
