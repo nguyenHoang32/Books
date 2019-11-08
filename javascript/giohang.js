@@ -148,3 +148,4 @@ function goToCategory(a) {
     let categoryValue = a.innerText;
     localStorage.setItem('categoryName', categoryValue);
 }
+console.log('Hello');
